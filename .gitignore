@@ -1,0 +1,13 @@
+/*
+!/README.md
+!/.gitignore
+!/.zshrc
+!/.config
+!/.local
+
+/.config/*
+!/.config/i3/
+!/.config/ranger/
+
+/.local/*
+!/.local/bin/
