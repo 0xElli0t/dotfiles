@@ -1,9 +1,11 @@
 /*
 !/README.md
+!/wallpaper.jpg
 !/.gitignore
 !/.zshrc
 !/.config
 !/.local
+
 
 /.config/*
 !/.config/i3/
