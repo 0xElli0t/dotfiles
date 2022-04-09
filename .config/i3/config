@@ -20,11 +20,12 @@ set $ws9 "9"
 set $ws10 "10"
 
 # font size
-set $font_size 13
+set $font_size 12
 
 # fonts
 font pango:monospace $font_size
-font pango:DejaVu Sans Mono $font_size
+font pango:unfiont $font_size
+font pango:roboto $font_size
 
 # move floating windows with mod+mouse 
 floating_modifier $mod
@@ -81,6 +82,9 @@ bindsym XF86AudioRaiseVolume exec "pamixer --increase 5"
 bindsym XF86AudioLowerVolume exec "pamixer --decrease 5"
 bindsym XF86AudioMute exec "pamixer --toggle-mute"
 
+# screenshot hotkey
+bindsym $mod+Shift+s exec flameshot gui
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -112,7 +116,7 @@ assign [class="discord"] $ws10
 
 # startup applications
 exec firefox
-exec alacritty
+exec urxvt
 exec discord
 
 # startup services

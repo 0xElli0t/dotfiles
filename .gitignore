@@ -3,6 +3,7 @@
 !/wallpaper.jpg
 !/.gitignore
 !/.zshrc
+!/.gtkrc-2.0
 !/.config
 !/.local
 
@@ -10,6 +11,7 @@
 /.config/*
 !/.config/i3/
 !/.config/ranger/
+!/.config/gtk-3.0/
 
 /.local/*
 !/.local/bin/
