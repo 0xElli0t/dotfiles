@@ -8,6 +8,11 @@ set $up "k"
 set $right "l"
 
 # color variables
+set $bg_color 	         "#2f343f"
+set $inactive_bg_color   "#2f343f"
+set $text_color          "#f3f4f5"
+set $inactive_text_color "#676e7d"
+set $urgent_bg_color     "#e53935"
 
 # workspace names 
 set $ws1 "1" 
@@ -56,8 +61,9 @@ bindsym $mod+v split toggle
 # fullscreen
 bindsym $mod+f fullscreen toggle
 
-# toggle stacked / tabbed 
-bindsym $mod+e layout toggle split
+# keybinds for layout stacking / tabbed
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -80,13 +86,13 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # lock keybind
 bindsym $mod+Shift+x exec "i3lock --color 475263"
 
+# screenshot keybind
+bindsym $mod+Shift+s exec flameshot gui
+
 # special keys
 bindsym XF86AudioRaiseVolume exec "pamixer --increase 5"
 bindsym XF86AudioLowerVolume exec "pamixer --decrease 5"
 bindsym XF86AudioMute exec "pamixer --toggle-mute"
-
-# screenshot hotkey
-bindsym $mod+Shift+s exec flameshot gui
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -112,15 +118,18 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# focus window urgent windows
+for_window [urgent="latest"] focus
+
 # assign apps to certain workspaces
 assign [class="firefox"] $ws1
 assign [class="URxvt"] $ws2
 assign [class="discord"] $ws10
 
 # startup applications
-exec firefox
-exec urxvt
-exec discord
+exec --no-startup-id firefox
+exec --no-startup-id urxvt
+exec --no-startup-id discord
 
 # startup services
 exec --no-startup-id dex --autostart --environment i3
@@ -130,7 +139,25 @@ exec --no-startup-id nm-applet
 # wallapaper
 exec "feh --bg-scale $HOME/wallpaper.jpg"
 
+# borderless windows
+default_border none
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg_color           $bg_color          $text_color          #00ff00
+client.unfocused        $inactive_bg_color  $inactive_bg_color $inactive_text_color  #00ff00
+client.focused_inactive $inactive_bg_color  $inactive_bg_color $inactive_text_color  #00ff00
+client.urgent           $urgent_bg_color    $urgent_bg_color   $text_color          #00ff00
+
 # buttom status bar
 bar {
         status_command i3status
+        	colors {
+		background $bg_color
+	    	separator #757575
+		#                  border             background         text
+		focused_workspace  $bg_color          $bg_color          $text_color
+		inactive_workspace $inactive_bg_color $inactive_bg_color $inactive_text_color
+		urgent_workspace   $urgent_bg_color   $urgent_bg_color   $text_color
+	}
 }
