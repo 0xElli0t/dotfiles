@@ -1,0 +1,47 @@
+! font
+URxvt.font: xft:monospace:size=12,xft:unifont:size=12,xft:roboto:size=12
+
+! fuck them scrollbar
+URxvt.scrollBar: false
+
+! copy-paste 
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! transparency
+URxvt.transparent:   true
+URxvt.tintColor:     white
+URxvt.shading:       20
+
+! color scheme
+
+*.foreground:   #eceff1
+*.background:   #1c2028
+*.cursorColor:  #eceff1
+
+*.color0:       #263238
+*.color8:       #919191
+
+*.color1:       #ff9800
+*.color9:       #ed973f
+
+*.color2:       #34f3a5
+*.color10:      #34f3a5
+
+*.color3:       #ffc107
+*.color11:      #ffa000
+
+*.color4:       #031f9e
+*.color12:      #03a9f4
+
+*.color5:       #ff5a92
+*.color13:      #ef5b9c
+
+*.color6:       #3ad4c5
+*.color14:      #3ad4c5
+
+*.color7:       #cfd8dc
+*.color15:      #eceff1
+
