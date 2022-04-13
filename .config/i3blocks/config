@@ -1,0 +1,12 @@
+# Global properties
+separator=true
+separator_block_width=15
+
+[volume]
+command=sleep 0.25; echo "Volume: $(pamixer --get-volume-human)"
+interval=repeat
+
+[time]
+command=date "+%Y/%m/%d %H:%M"
+interval=1
+

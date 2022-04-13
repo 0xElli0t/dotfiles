@@ -80,17 +80,17 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # program startup keybinds
-bindsym $mod+t exec urxvt
-bindsym $mod+d exec --no-startup-id dmenu_run 
+bindsym $mod+t exec  "urxvt"
+bindsym $mod+d exec "rofi -show run"
 
 # lock keybind
 bindsym $mod+Shift+x exec "i3lock --color 475263"
 
 # screenshot keybind
-bindsym $mod+Shift+s exec flameshot gui
+bindsym $mod+Shift+s exec "gscreenshot"
 
 # special keys
-bindsym XF86AudioRaiseVolume exec "pamixer --increase 5"
+bindsym XF86AudioRaiseVolume exec "pamixer --increase 5" 
 bindsym XF86AudioLowerVolume exec "pamixer --decrease 5"
 bindsym XF86AudioMute exec "pamixer --toggle-mute"
 
@@ -119,40 +119,55 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # focus window urgent windows
-for_window [urgent="latest"] focus
+focus_on_window_activation focus
 
 # assign apps to certain workspaces
 assign [class="firefox"] $ws1
 assign [class="URxvt"] $ws2
 assign [class="discord"] $ws10
 
+# make some programs floating by default
+for_window [class="Gscreenshot"] floating enable
+
+# fuck them borders
+for_window [class=".*"] border pixel 0
+
+# gaps
+gaps inner 10
+gaps outer 20
+gaps bottom 0
+
 # startup applications
-exec --no-startup-id firefox
-exec --no-startup-id urxvt
-exec --no-startup-id discord
+exec firefox
+exec urxvt
+exec discord
 
 # startup services
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id compton
 
 # wallapaper
-exec "feh --bg-scale $HOME/wallpaper.jpg"
+exec --no-startup-id "feh --bg-scale $HOME/wallpaper.jpg"
 
-# borderless windows
-default_border none
+#disable touchpad
+exec --no-startup-id "xinput disable 12"
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $bg_color           $bg_color          $text_color          #00ff00
-client.unfocused        $inactive_bg_color  $inactive_bg_color $inactive_text_color  #00ff00
-client.focused_inactive $inactive_bg_color  $inactive_bg_color $inactive_text_color  #00ff00
-client.urgent           $urgent_bg_color    $urgent_bg_color   $text_color          #00ff00
+client.focused          $bg_color           $bg_color          $text_color          #000000
+client.unfocused        $inactive_bg_color  $inactive_bg_color $inactive_text_color #000000
+client.focused_inactive $inactive_bg_color  $inactive_bg_color $inactive_text_color #000000
+client.urgent           $urgent_bg_color    $urgent_bg_color   $text_color          #000000
 
-# buttom status bar
+# bottom status bar
 bar {
-        status_command i3status
-        	colors {
+	height 30
+        status_command i3blocks -c $HOME/.config/i3blocks/config
+	modifier $mod
+	separator_symbol " "
+	colors {
 		background $bg_color
 	    	separator #757575
 		#                  border             background         text
