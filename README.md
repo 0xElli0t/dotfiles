@@ -7,3 +7,4 @@
 * gtk2/3 (graphics thing)
 * URxvt (terminal emulator)
 * zsh (shell)
+* neovim (text editor) 

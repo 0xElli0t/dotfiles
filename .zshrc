@@ -25,34 +25,27 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # aliases
-alias ll="ls -la"
+alias ll="ls -lah"
 alias nc="ncat"
 alias r="ranger"
+alias vim="nvim" 
 alias die="poweroff"
 alias rm="$HOME/.local/bin/safe_rm"
 
 # keybinds
-bindkey -s "^p" "pwd\n"
-bindkey -s "^h" "htop\n"
-bindkey -s "^r" "ranger\n"
+# allow using a keybind even if commadline contains text
+__keybind_start="a &> /dev/null;"
 
-# safe-ish way to empty trash
-empty_trash(){
-	echo "$(find $HOME/.Trash/* | wc -l) file(s) will be deleted"
-	echo -n "continue? [y/N] "
-	read choice
+bindkey -s "^p" "$__keybind_start pwd\n"
+bindkey -s "^h" "$__keybind_start htop\n"
+bindkey -s "^r" "$__keybind_start ranger\n"
 
-	if [[ $choice == "y" ]]; then
-		/bin/rm -rf $HOME/.Trash/*
-	fi
-}
-
-# auto cd to last pwd
-cd $(cat $HOME/.cache/last_pwd)
+# cd to last pwd on shell-start
+cd $(cat $HOME/.cache/saved_pwd)
 
 # save pwd
-pwd(){
-	/bin/pwd && /bin/pwd > $HOME/.cache/last_pwd
+spwd(){
+	pwd && pwd > $HOME/.cache/saved_pwd
 }
 
 # load plugins
