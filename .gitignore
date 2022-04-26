@@ -12,6 +12,7 @@
 
 /.local/bin/*
 !/.local/bin/safe_rm
+!/.local/bin/letters
 
 /.config/*
 !/.config/i3/
