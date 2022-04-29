@@ -47,8 +47,17 @@ bindkey -s "^r" "$__keybind_start ranger\n"
 cd $(cat $HOME/.cache/saved_pwd)
 
 # save pwd
-spwd(){
+spwd() {
 	pwd && pwd > $HOME/.cache/saved_pwd
+}
+
+# mkdir shortcuts
+cmkdir() {
+    mkdir $@ && cd $@
+}
+
+scmkdir() {
+    mkdir $@ && cd $@ && spwd
 }
 
 # load plugins
