@@ -8,3 +8,6 @@
 * URxvt (terminal emulator)
 * zsh (shell)
 * neovim (text editor) 
+
+## ~/.local/bin
+~/.local/bin contains some useful scripts
