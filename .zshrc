@@ -43,21 +43,17 @@ bindkey -s "^s" "$__keybind_start spwd\n"
 bindkey -s "^h" "$__keybind_start htop\n"
 bindkey -s "^r" "$__keybind_start ranger\n"
 
-# cd to last pwd on shell-start
+# cd to saved pwd on shell-start
 cd $(cat $HOME/.cache/saved_pwd)
 
 # save pwd
-spwd() {
+sp() {
 	pwd && pwd > $HOME/.cache/saved_pwd
 }
 
 # mkdir shortcuts
-cmkdir() {
-    mkdir $@ && cd $@
-}
-
-scmkdir() {
-    mkdir $@ && cd $@ && spwd
+mkcd() {
+    mkdir $@ && cd $_
 }
 
 # load plugins
