@@ -24,22 +24,22 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# add stuffs to path
+# system variables
 export PATH="$PATH:$HOME/.local/bin/"
+export EDITOR="nvim"
 
 # aliases
 alias ll="ls -lah"
 alias nc="ncat"
 alias r="ranger"
-alias vim="nvim" 
 alias die="poweroff"
 alias rm="safe_rm"
 
 # keybinds
-# allow using a keybind even if commadline contains text
+# allows using a keybind even if commadline contains text
 __keybind_start="a &> /dev/null;"
 
-bindkey -s "^p" "$__keybind_start pwd\n"
+bindkey -s "^s" "$__keybind_start spwd\n"
 bindkey -s "^h" "$__keybind_start htop\n"
 bindkey -s "^r" "$__keybind_start ranger\n"
 
