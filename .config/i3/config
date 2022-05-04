@@ -123,6 +123,8 @@ focus_on_window_activation focus
 # assign apps to certain workspaces
 assign [class="firefox"] $ws1
 assign [class="URxvt"] $ws2
+assign [class="steam"] $ws3
+assign [class="gdlauncher"] $ws3
 assign [class="discord"] $ws10
 
 # make some programs floating by default

@@ -4,11 +4,11 @@
 !/.gitignore
 !/.Xresources
 !/.gtkrc-2.0
-!/.local
-!/.config
+!/.local/
+!/.config/
 
 /.local/*
-!/.local/bin
+!/.local/bin/
 
 /.local/bin/*
 !/.local/bin/safe_rm
@@ -18,6 +18,6 @@
 !/.config/i3/
 !/.config/i3blocks/
 !/.config/gtk-3.0/
-!/.config/zsh
-!/.config/nvim
+!/.config/zsh/
+!/.config/nvim/
 !/.config/ranger/
