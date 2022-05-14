@@ -125,6 +125,7 @@ assign [class="firefox"] $ws1
 assign [class="URxvt"] $ws2
 assign [class="Steam"] $ws3
 assign [class="gdlauncher"] $ws3
+assign [class="Lutris"] $ws3
 assign [class="discord"] $ws10
 
 # make some programs floating by default
