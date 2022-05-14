@@ -42,6 +42,7 @@ __keybind_start="a &> /dev/null;"
 bindkey -s "^s" "$__keybind_start spwd\n"
 bindkey -s "^h" "$__keybind_start htop\n"
 bindkey -s "^r" "$__keybind_start ranger\n"
+bindkey -s "^s" "$__keybind_start clear\n"
 
 # cd to saved pwd on shell-start
 cd $(cat $HOME/.cache/saved_pwd)
