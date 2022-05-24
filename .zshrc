@@ -49,7 +49,7 @@ cd $(cat $HOME/.cache/saved_pwd)
 
 # save pwd
 sp() {
-	pwd && pwd > $HOME/.cache/saved_pwd
+	pwd > $HOME/.cache/saved_pwd
 }
 
 # mkdir shortcuts
