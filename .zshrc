@@ -35,10 +35,10 @@ alias r="ranger"
 alias die="poweroff"
 alias rm="safe_rm"
 
-# keybinds
 # allows using a keybind even if commadline contains text
 __keybind_start="a &> /dev/null;"
 
+# keybinds
 bindkey -s "^s" "$__keybind_start spwd\n"
 bindkey -s "^h" "$__keybind_start htop\n"
 bindkey -s "^r" "$__keybind_start ranger\n"
@@ -52,7 +52,7 @@ sp() {
 	pwd > $HOME/.cache/saved_pwd
 }
 
-# mkdir shortcuts
+# automatically create a dir and cd to it
 mkcd() {
     mkdir $@ && cd $_
 }

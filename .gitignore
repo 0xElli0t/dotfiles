@@ -2,8 +2,11 @@
 !/README.md
 !/wallpaper.jpg
 !/.gitignore
+!/.gitmodules
+!/.zshrc
 !/.Xresources
 !/.gtkrc-2.0
+
 !/.local/
 !/.config/
 
