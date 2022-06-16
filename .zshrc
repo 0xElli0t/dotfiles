@@ -32,17 +32,17 @@ export EDITOR="nvim"
 alias ll="ls -lah"
 alias nc="ncat"
 alias r="ranger"
-alias die="poweroff"
 alias rm="safe_rm"
+alias die="poweroff"
+alias please="sudo"
 
 # allows using a keybind even if commadline contains text
 __keybind_start="a &> /dev/null;"
 
 # keybinds
-bindkey -s "^s" "$__keybind_start spwd\n"
-bindkey -s "^h" "$__keybind_start htop\n"
+bindkey -s "^p" "$__keybind_start sp\n"
 bindkey -s "^r" "$__keybind_start ranger\n"
-bindkey -s "^s" "$__keybind_start clear\n"
+bindkey -s "^k" "$__keybind_start clear\n"
 
 # cd to saved pwd on shell-start
 cd $(cat $HOME/.cache/saved_pwd)
