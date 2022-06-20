@@ -12,8 +12,8 @@ URxvt.iso14755_52: false
 
 ! transparency
 URxvt.transparent:   true
-URxvt.tintColor:     white
-URxvt.shading:       20
+URxvt.tintColor:     #693a93
+URxvt.shading:       60
 
 ! color scheme
 
