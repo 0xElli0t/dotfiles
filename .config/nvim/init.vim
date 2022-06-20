@@ -5,7 +5,6 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set number
-syntax on
 set noswapfile
 set backupdir=$HOME/.cache/nvim
 set clipboard=unnamedplus
