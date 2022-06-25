@@ -8,7 +8,6 @@ set number
 set noswapfile
 set backupdir=$HOME/.cache/nvim/
 set clipboard=unnamedplus
-set packpath=$HOME/.config/nvim/pack/
 
 call plug#begin()
 Plug 'Mofiqul/dracula.nvim'
