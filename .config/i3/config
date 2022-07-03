@@ -150,7 +150,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id compton
 
 # wallapaper
-exec --no-startup-id "feh --bg-scale $HOME/wallpaper.jpg"
+exec --no-startup-id "feh --bg-scale $HOME/.config/i3/wallpaper.jpg"
 
 # disable touchpad
 exec --no-startup-id "xinput disable 12"
